@@ -1,20 +1,4 @@
-class Solution:
-    def twoSum(self, numbers: List[int], target: int) -> List[int]:
-        n = len(numbers)
-
-        l, r = 0, n-1
-
-        while l < r:
-
-            if numbers[l] + numbers[r] > target:
-                r = r-1
-            elif numbers[l] + numbers[r] < target:
-                l = l+1
-            else:
-                return [l+1, r+1]
-
-
-        
+       
 '''
 167. Two Sum II - Input Array Is Sorted
 Solved
@@ -56,3 +40,34 @@ numbers is sorted in non-decreasing order.
 -1000 <= target <= 1000
 The tests are generated such that there is exactly one solution.
 '''
+#brute force solution
+class Solution:
+    def twoSum(self, numbers: List[int], target: int) -> List[int]:
+        n = len(numbers)
+
+        l, r = 0, n-1
+
+        while l < r:
+
+            if numbers[l] + numbers[r] > target:
+                r = r-1
+            elif numbers[l] + numbers[r] < target:
+                l = l+1
+            else:
+                return [l+1, r+1]
+
+# using hashmap
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+
+        n = len(nums)
+        map = {}
+
+        for i in range(n):
+            required_num = target - nums[i]
+
+            if required_num in map:
+                return [i, map[required_num]]
+            map[nums[i]] = i
+        
