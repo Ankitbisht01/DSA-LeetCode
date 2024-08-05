@@ -41,6 +41,7 @@ numbers is sorted in non-decreasing order.
 The tests are generated such that there is exactly one solution.
 '''
 #brute force solution
+
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
         n = len(numbers)
