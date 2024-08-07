@@ -27,8 +27,25 @@ Either x is not zero or n > 0.
 -104 <= xn <= 104
 '''
 
-#Solution
+#Solution1
 class Solution:
     def myPow(self, x: float, n: int) -> float:
         return x ** n
+    
+#Solution2
+class Solution:
+    def myPow(self, x: float, n: int) -> float:
+        if n == 0:
+            return 1
+        if n == 1:
+            return x
+        if n ==-1:
+            return 1/x
+        
+        return self.myPow(x*x, n//2) * self.myPow(x, n % 2)
+
+        
+
+        
+        
         
