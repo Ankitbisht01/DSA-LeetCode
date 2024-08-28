@@ -40,5 +40,7 @@ class Solution:
             return reverse
         else:
             return (reverse * -1)
+        
+Solution.reverse(321)
 
        
